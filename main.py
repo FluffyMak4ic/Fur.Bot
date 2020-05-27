@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 # programm: furbot
-# description: furbot is a bot written for the VK social network in order to pump out pictures from the e962.net website.
+# description: furbot is a bot written for the VK social network in order to pump out pictures from the e926.net website.
 # author: Mak4ic
 # website: https://github.com/FluffyMak4ic/Fur.Bot
 
@@ -31,7 +31,7 @@ for event in longpoll.listen():
     if event.type == VkEventType.MESSAGE_NEW and event.to_me and event.text:
         print('id{}: "{}"'.format(event.user_id, event.text), end=' ')
         if event.text == "Начать" or event.text == ".help":
-            write_msg(event.user_id, 'Автор [id260228378|Максим Гусев]\n' + "Информация о боте: Furbot - это бот, созданный для социальной сети ВКонтакте, чтобы выкачивать картинки с сайта e962.net.\n" + "Команды:\n" + ".help - Все о боте\n" + ".loadposts - загрузить картинки")
+            write_msg(event.user_id, 'Автор [id260228378|Максим Гусев]\n' + "Информация о боте: Furbot - это бот, созданный для социальной сети ВКонтакте, чтобы выкачивать картинки с сайта e926.net.\n" + "Команды:\n" + ".help - Все о боте\n" + ".loadposts - загрузить картинки")
         elif event.text == ".loadposts":
             write_msg(event.user_id, "Ведите номер страници")
             for event in longpoll.listen():
