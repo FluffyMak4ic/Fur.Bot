@@ -1,2 +1,5 @@
-requests
+enums
 vk_api
+aiohttp
+requests
+cached_property
