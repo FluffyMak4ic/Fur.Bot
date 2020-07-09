@@ -22,6 +22,7 @@ public module main.py of FurBot
 
 '''
 
+import os
 import io
 import re  # RegEx support was added in 1.0
 import abc  # Abstraction was added in 1.0 Revision 2 (1.0r2)
@@ -275,7 +276,7 @@ class Meta(enums.Enum):
        secret.
 
     '''
-    VKT = ""
+    VKT = os.environ.get('VK_API_TOKEN')
 
     '''
 
@@ -294,6 +295,14 @@ class Meta(enums.Enum):
     HDR = {
         'User-Agent': USR
     }
+
+    '''
+
+    public const PRF
+     ` Changing user agent name
+
+    '''
+    PRF = '.'
 
 
 class Urls(enums.Enum):
@@ -365,16 +374,6 @@ class PostData(ABCData):
         return str(self.data['id'])
 
     @property
-    def url(self):
-        '''
-
-        public async property url
-         ` ...
-
-        '''
-        return self.file['url']
-
-    @property
     def file(self):
         '''
 
@@ -393,6 +392,16 @@ class PostData(ABCData):
 
         '''
         return self.data['rating']
+
+    @property
+    def imageUrl(self):
+        '''
+
+        public async property imageUrl
+         ` ...
+
+        '''
+        return self.file['url']
 
 
 class PageData(ABCData):
@@ -475,14 +484,15 @@ class FurBot(Bot):
     ------------------------------------------------------------------
 
     section <Image Randomizer> of class FurBot
+     * author: Foxsome
      ` ...
 
     '''
 
-    async def _getImage(self, session, imageData):
+    async def _getImage(self, session, postData):
         return await self.downloader.downloadImage(
             session,
-            imageData.url
+            postData.imageUrl
         )
 
     async def _getPageData(self, session, page, category):
@@ -511,33 +521,48 @@ class FurBot(Bot):
         )
 
     async def randomize(self, bot, event, page, category):
+        '''
+
+        public coroutine randomize(bot, event, page, category)
+         ` ...
+
+        '''
         api = self.api
+
         async with aiohttp.ClientSession(headers=Meta.HDR) as sess:
+
+            postData = await self._getPageData(
+                sess,
+                page,
+                category
+            )
+
+            randomPost = await self._getRandomPost(
+                postData
+            )
+
             image = await self._getImage(
                 sess,
-                await self._getRandomPost(
-                    await self._getPageData(
-                        sess,
-                        page,
-                        category
-                    )
-                )
+                randomPost
             )
+
             attachment = await self._photoToAttachment(
                 self.uploader.photo_messages(
                     photos=io.BytesIO(image.data)
                 )[0]
             )
-
             api.messages.send(
                 user_id=event.user_id,
-                message="Смотри: ",
+                message="🆔 : %s" % randomPost.id,
                 attachment=attachment.format(),
                 random_id=getRandomId()
             )
 
 
+if __name__ == '__main__':
+    bot = FurBot(
+        prefix=Meta.PRF,
+        token=Meta.VKT
+    )
 
-fur = FurBot(prefix=".", token="867f4aa1aa9f93f7d8032b5b960c36991f92f1e20836faf3cb34e1759d1eb7334395a38c307df82f5b8a9")
-
-fur.run()
+    bot.run()
