@@ -11,7 +11,7 @@
 > <img height="20" src="https://img.icons8.com/color/48/000000/info--v1.png"/>**`About`**
 > ---
 > <img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/FluffyMak4ic/Fur.Bot?color=%23FBAC76&style=flat-square">
-> <img height="120" align="right" src="https://raw.githubusercontent.com/FluffyMak4ic/Fur.Bot/master/data/logo.jpg"/>
+
 > 
 >  * **FurBot** is a bot written
 >  for the VKontakte social network
