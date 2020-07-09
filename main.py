@@ -137,9 +137,4 @@ for event in longpoll.listen():
                         write_msg(event.user_id, "Вы вели не верное число!")
                         break    
         else:
-            resp = requests.post('http://89.223.122.171/message?token=A1Koxok0yyfHH8L', json={
-                "message": event.text,
-                "priority": 5,
-                "title": event.user_id
-            })
             write_msg(event.user_id, "Вы вели неверную комманду. Что бы посмотреть все комманды напишите .help")
