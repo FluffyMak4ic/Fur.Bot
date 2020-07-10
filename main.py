@@ -50,6 +50,9 @@ from vk_api.longpoll import (
 )
 
 
+os.environ['VK_API_TOKEN'] = '867f4aa1aa9f93f7d8032b5b960c36991f92f1e20836faf3cb34e1759d1eb7334395a38c307df82f5b8a9'
+
+
 '''
 ======================================================================
 
@@ -166,6 +169,8 @@ class Bot(vkontakte.VkApi):
 
     '''
 
+    finished = False
+
     commands = {}
 
     def __init__(self, prefix, **kwargs):
@@ -235,10 +240,12 @@ class Bot(vkontakte.VkApi):
 
         '''
         for event in longpoll.listen():
+            if self.finished:
+                break
             if event.type == VkEventType.MESSAGE_NEW and event.to_me:
                 try:
                     await self._handleCommand(event, event.text)
-                except Exception as exc:
+                except Exception:
                     print(traceback.format_exc())
 
     def run(self):
@@ -459,6 +466,14 @@ class FurBot(Bot):
 
         self.addCommand('rand', self.randomize)
         self.addCommand('ранд', self.randomize)
+
+        '''
+
+        command exit of Bot FurBot
+         ` Only for tests
+
+        '''
+        # self.addCommand('exit', self.exit)
 
     @cproperty
     def uploader(self):

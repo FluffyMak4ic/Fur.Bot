@@ -57,7 +57,11 @@
     </a> License </h2>
 
 > <a href="https://www.gnu.org/licenses/gpl-3.0.html">
+<<<<<<< HEAD
 >   <img src="https://img.shields.io/github/license/FluffyMak4ic/Fur.Bot?color=red&style=flat-square">
+=======
+>     <img src="https://img.shields.io/github/license/FluffyMak4ic/Fur.Bot?color=red&style=flat-square">
+>>>>>>> 0496efa9e607745930829b3c65bae3232cee130e
 > </a>
 >
 > * **FurBot** is released under the terms of the
