@@ -110,18 +110,20 @@
 <!--
 All Social Networks FluffyMak4ic Has:
 1. Vkontakte
-2. FaceBook
+2. Reddit
 3. Twitter
 -->
 <h4 align="center">
-     <a href="https://vk.com/mak4ic">
+     <a href="https://vk.com/mak4ic" target="_blank">
         <img src="https://img.icons8.com/color/48/000000/vk-circled.png"/>
     </a>
-        <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png"/>
-    <a>
+    <a href="https://www.reddit.com/user/Mak4ic" target="_blank">
+        <img src="https://img.icons8.com/color/48/000000/reddit.png"/>
+    </a>
+    <a href="https://twitter.com/mak4ic" target="_blank">
         <img src="https://img.icons8.com/fluent/48/000000/twitter.png"/>
     </a>
-    <a>
+    <a href="mailto:fluffymak4ik@gmail.com" target="_blank">
         <img src="https://img.icons8.com/fluent/48/000000/gmail.png"/>
     </a>
 </h4>
