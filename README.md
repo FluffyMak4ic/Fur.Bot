@@ -52,10 +52,10 @@
         <img height="24" src="https://img.icons8.com/fluent/48/000000/book.png"/>
     </a> License </h2>
 
-<a href="https://www.gnu.org/licenses/gpl-3.0.html">
-    <img src="https://img.shields.io/github/license/FluffyMak4ic/Fur.Bot?color=red&style=flat-square">
-</a>
-
+> <a href="https://www.gnu.org/licenses/gpl-3.0.html">
+>     <img src="https://img.shields.io/github/license/FluffyMak4ic/Fur.Bot?color=red&style=flat-square">
+> </a>
+>
 > * **FurBot** is released under the terms of the
 > *GNU General Public License v3.0*.
 > Please refer to the *LICENSE* file to get
