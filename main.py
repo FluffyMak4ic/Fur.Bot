@@ -24,14 +24,16 @@ public module main.py of FurBot
 
 import os
 import io
-import re  # RegEx support was added in 1.0
-import abc  # Abstraction was added in 1.0 Revision 2 (1.0r2)
-import json  # JSON support was added in 1.0
-import enums  # Enumerators were added in 1.0 Revision 2 (1.0r2)
-import random  # Randomizing is avaible now!
-import aiohttp  # Asynchronous HTTP support was added in 1.0r2
-import asyncio  # Asyncio support was added in 1.0r2
+import re         # RegEx support was added in 1.0
+import abc        # Abstraction was added in 1.0 Revision 2 (1.0r2)
+import json       # JSON support was added in 1.0
+import enums      # Enumerators were added in 1.0 Revision 2 (1.0r2)
+import random     # Randomizing is avaible now!
+import aiohttp    # Asynchronous HTTP support was added in 1.0r2
+import asyncio    # Asyncio support was added in 1.0r2
 import traceback  # Neccessary to get out errors
+import unittest   # Unit test support was added in 1.0r2.1
+
 
 import vk_api as vkontakte
 
@@ -49,8 +51,6 @@ from vk_api.longpoll import (
     VkEventType
 )
 
-
-os.environ['VK_API_TOKEN'] = '867f4aa1aa9f93f7d8032b5b960c36991f92f1e20836faf3cb34e1759d1eb7334395a38c307df82f5b8a9'
 
 
 '''
