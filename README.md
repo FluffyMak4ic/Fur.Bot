@@ -29,7 +29,7 @@
 <!--
  Python Version And Python Coverage Shield With Official Logotype
 -->
-> <img src="https://img.shields.io/badge/python-3.7-red?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/coverage-97%25-red?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/requires/github/FluffyMak4ic/vkFur.Bot?color=red&style=flat-square">
+> <img src="https://img.shields.io/badge/python-3.7-red?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/coverage-97%25-red?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/requires/github/FluffyMak4ic/vkFur.Bot?color=red&style=flat-square&logo=python&logoColor=white">
 > 
 > * **FurBot** is fully written in Python
 > and requires Python 3.7 or Above.
